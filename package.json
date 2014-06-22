@@ -1,0 +1,42 @@
+{
+  "name": "grunt-md5-plus",
+  "description": "对文件添加md5的时间戳、对应的md5的时间列表",
+  "version": "0.1.0",
+  "homepage": "https://github.com/huixisheng/grunt-md5-plus",
+  "author": {
+    "name": "huixisheng",
+    "email": "469184346@qq.com",
+    "url": "http://huixisheng.github.io/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/huixisheng/grunt-md5-plus.git"
+  },
+  "bugs": {
+    "url": "https://github.com/huixisheng/grunt-md5-plus/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/huixisheng/grunt-md5-plus/blob/master/LICENSE-MIT"
+    }
+  ],
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "devDependencies": {
+    "grunt-contrib-jshint": "~0.6.0",
+    "grunt-contrib-clean": "~0.4.0",
+    "grunt-contrib-nodeunit": "~0.2.0",
+    "grunt": "~0.4.5"
+  },
+  "peerDependencies": {
+    "grunt": "~0.4.5"
+  },
+  "keywords": [
+    "gruntplugin"
+  ]
+}
