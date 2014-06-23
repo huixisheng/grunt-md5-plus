@@ -1,7 +1,7 @@
 {
   "name": "grunt-md5-plus",
   "description": "对文件添加md5的时间戳、对应的md5的时间列表",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "homepage": "https://github.com/huixisheng/grunt-md5-plus",
   "author": {
     "name": "huixisheng",

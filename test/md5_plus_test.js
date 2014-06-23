@@ -46,7 +46,7 @@ exports.md5_plus = {
 
     var actualScriptMap = JSON.stringify(grunt.file.read( createScriptMap ));
     var expectedScriptMap = JSON.stringify(grunt.file.read( expectedScript ));
-    test.equal(actualScriptMap, expectedScriptMap, 'scriptMap.phtml pass.');
+    test.equal(actualScriptMap, expectedScriptMap, 'scriptMap.phtml create right.');
 
     // 对应文件添加时间戳是否生成成功
     var filelist = grunt.file.readJSON( expectedMapConfig );
@@ -75,7 +75,7 @@ exports.md5_plus = {
 
     var actualScriptMap = JSON.stringify(grunt.file.read( createScriptMap ));
     var expectedScriptMap = JSON.stringify(grunt.file.read( expectedScript ));
-    test.equal(actualScriptMap, expectedScriptMap, 'scriptMap.phtml pass.');
+    test.equal(actualScriptMap, expectedScriptMap, 'scriptMap.phtml create right.');
 
     // 对应文件添加时间戳是否生成成功
     var filelist = grunt.file.readJSON( expectedMapConfig );

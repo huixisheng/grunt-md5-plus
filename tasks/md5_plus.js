@@ -70,7 +70,14 @@ module.exports = function(grunt) {
         });
 
         var output = JSON.stringify(mapConfig, null, "  ");
-        var outputScript = '<script>\nvar seajsMapSetting='+ output +'\n</script>';
+        var seajsMap = mapConfig;
+        for(var i in seajsMap){
+            if( i.indexOf('-debug.js') >= 0 ){
+                delete seajsMap[i];
+            }
+        }
+        var seajsMapString = JSON.stringify(seajsMap).replace('\n', '').replace('\t', '');
+        var outputScript = '<script>\nvar SEAJSMAP='+ seajsMapString +';\n</script>';
         grunt.file.write(options.mapConfig, output);
         grunt.log.writeln('mapConfig.json create');
         grunt.file.write(options.scriptMap, outputScript);
