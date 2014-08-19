@@ -44,6 +44,7 @@ module.exports = function(grunt) {
                 options:{
                     separator: '.',
                     md5Length: '10',
+                    phpMap: 'tmp/custom/phpMap.php',
                     scriptMap: 'tmp/custom/scriptMap.phtml',
                     mapConfig: 'tmp/custom/mapConfig.json'
                 },

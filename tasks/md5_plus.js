@@ -33,8 +33,9 @@ module.exports = function(grunt) {
         var options = this.options({
             separator: '-', // 连接文件名和md5的分隔符
             md5Length: '6', // 文件内容md5值的长度
+            phpMap: 'tmp/phpMap.phtml', // 添加php对于的版本号的map
             scriptMap: 'tmp/scriptMap.phtml', // 包含 script 的 json map
-            mapConfig: 'tmp/mapConfig.json' // 文件名对应的md5的map
+            mapConfig: 'tmp/mapConfig.json' // 文件名对应的md5的map。如果md5的value存在将不再拷贝文件。
         });
 
         var mapConfig = {};
@@ -78,10 +79,13 @@ module.exports = function(grunt) {
         }
         var seajsMapString = JSON.stringify(seajsMap).replace('\n', '').replace('\t', '');
         var outputScript = '<script>\nvar SEAJSMAP='+ seajsMapString +';\n</script>';
+        var phpMap = '<?php return array(' + seajsMapString.replace(/\:/ig, '=>').replace('{', '').replace('}', '') + ');';
         grunt.file.write(options.mapConfig, output);
         grunt.log.writeln('mapConfig.json create');
         grunt.file.write(options.scriptMap, outputScript);
         grunt.log.writeln( options.scriptMap + ' create');
+        grunt.file.write(options.phpMap, phpMap);
+        grunt.log.writeln(options.phpMap + ' create');
     });
 
 };
