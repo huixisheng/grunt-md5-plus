@@ -53,6 +53,8 @@ grunt.initConfig({
 ### 使用说明
 
 配合seajs的map
+
+```
   var map = [];
   $.each(SEAJSMAP, function(key, value){
       var reg = new RegExp(key, 'g');
@@ -62,15 +64,13 @@ grunt.initConfig({
   seajs.config({
       map: map
   });
+```
 
 配合php
-  
-    $versionMap = include_once('tmp/phpMap.php');
-    <link href="http://huixisheng.com/index-<?php if (isset($versionMap['index.css']))  echo $versionMap['index.css'];?>.css" rel="stylesheet" />
 
-## 例子
-
-- [圈子](http://t.10jqka.com.cn/)
-- [手机直播](http://t.10jqka.com.cn/circle/mobile/index.html)
+```  
+  $versionMap = include_once('tmp/phpMap.php');
+  <link href="http://huixisheng.com/index-<?php if (isset($versionMap['index.css']))  echo $versionMap['index.css'];?>.css" rel="stylesheet" />
+```
 
 
